@@ -1,4 +1,4 @@
-import { model, Schema, Document, Schema } from 'mongoose';
+import { model, Schema, Document } from 'mongoose';
 
 export interface IMichi extends Document {
   name: string;
@@ -29,3 +29,5 @@ const michiSchema = new Schema({
     type: String,
   },
 });
+
+export default model<IMichi>('Michi', michiSchema);
