@@ -25,12 +25,12 @@ app.use(passport.initialize());
 
 passport.use(passportMiddleware);
 
-app.use(authRoutes);
-app.use(michisRoutes);
-
 // routes
 app.get('/', (req, res) => {
   res.send(`The API is at http://localhost:${app.get('port')}`);
 });
+
+app.use('/api/auth', authRoutes);
+app.use('/api/michis', michisRoutes);
 
 export default app;
